@@ -1,6 +1,6 @@
 # MASCO–ESCO Crosswalk Research
 
-Research by **[Charles Yi](https://github.com/CharlesYi-DEV)** on linking MASCO 2020 occupations to ESCO v1.2.1 using lexical retrieval, embeddings, hybrid ranking and independent human validation.
+linking MASCO 2020 occupations to ESCO v1.2.1 using lexical retrieval, embeddings, hybrid ranking and independent human validation.
 
 **Status: candidate-generation experiments, not a validated crosswalk.** There are currently no independent human reference labels and no accepted mappings. Agreement between models is not accuracy.
 
