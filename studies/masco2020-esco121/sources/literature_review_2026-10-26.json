@@ -1,0 +1,118 @@
+{
+  "search_date": "2026-10-26",
+  "timezone": "Asia/Kuala_Lumpur",
+  "type": "targeted_primary_source_review_not_systematic_review",
+  "research_results_status": "not_executed_on_masco",
+  "sources": [
+    {
+      "source_id": "icwsm2026",
+      "title": "A Multi-Stage Framework with Taxonomy-Guided Reasoning for Occupation Classification Using Large Language Models",
+      "date": "2026-05-25",
+      "publication_status": "conference paper",
+      "url": "https://ojs.aaai.org/index.php/ICWSM/article/view/42622",
+      "inspected_url": "https://ojs.aaai.org/index.php/ICWSM/article/download/42622/50182/46723",
+      "inspected_scope": "Published PDF, sections 4 and 5; references primarily GPT-4o-generated for occupation evaluation",
+      "applicability_limit": "staged taxonomy-grounded retrieval/reranking; not independent Malaysian evidence"
+    },
+    {
+      "source_id": "agentmap2026",
+      "title": "AgentMap: Joint Equivalence and Subsumption Discovery for Ontology Matching",
+      "date": "2026-07-29",
+      "publication_status": "arXiv preprint v1",
+      "url": "https://arxiv.org/abs/2607.27130",
+      "inspected_url": "https://arxiv.org/html/2607.27130v1",
+      "inspected_scope": "Sections 2–4; constructed subsumption references and single-target formulation",
+      "applicability_limit": "relation-aware matching idea; must extend and validate both containment directions, overlap and multi-target outputs"
+    },
+    {
+      "source_id": "om2026_prompt",
+      "title": "Which Model, Which Prompt? Selecting and Configuring LLMs as Oracles for Ontology Matching",
+      "date": "2026-10-25",
+      "publication_status": "accepted refereed workshop paper, repository marked in press",
+      "url": "https://openaccess.city.ac.uk/id/eprint/38303/",
+      "inspected_url": "https://openaccess.city.ac.uk/id/eprint/38303/",
+      "inspected_scope": "Repository abstract and metadata; repository available 2026-09-14; event date is not first availability",
+      "applicability_limit": "model/prompt performance depends on task; no universally winning prompt"
+    },
+    {
+      "source_id": "granularity2026",
+      "title": "Matching granularity matters for occupation skill and qualification linking in job advertisements",
+      "date": "2026-09-27",
+      "publication_status": "journal article",
+      "url": "https://link.springer.com/article/10.1007/s44163-026-02232-w",
+      "inspected_url": "https://link.springer.com/article/10.1007/s44163-026-02232-w",
+      "inspected_scope": "Sections 4.4, 6 and Data availability; occupation gain nonsignificant",
+      "applicability_limit": "ablate evidence granularity; transfer and taxonomy fit remain uncertain"
+    },
+    {
+      "source_id": "melo2024",
+      "title": "MELO: An Evaluation Benchmark for Multilingual Entity Linking of Occupations",
+      "date": "2024-10-10",
+      "publication_status": "workshop paper/arXiv v1",
+      "url": "https://arxiv.org/abs/2410.08319",
+      "inspected_url": "https://arxiv.org/html/2410.08319v1",
+      "inspected_scope": "Benchmark construction, experiments and model appendix; human-source provenance",
+      "applicability_limit": "external domain screening, not MASCO ground truth"
+    },
+    {
+      "source_id": "skillens2026",
+      "title": "SkiLLens: Recognising and Mapping Novel Skills from Millions of Job Ads Across Europe Using Language Models",
+      "date": "2026-03",
+      "publication_status": "EACL Industry paper",
+      "url": "https://aclanthology.org/2026.eacl-industry.65/",
+      "inspected_url": "https://aclanthology.org/2026.eacl-industry.65/",
+      "inspected_scope": "Publisher abstract and metadata",
+      "applicability_limit": "supporting skills-linking architecture; defer skill transfer"
+    },
+    {
+      "source_id": "qwen2025",
+      "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+      "date": "2025-06-05",
+      "publication_status": "official release and technical report",
+      "url": "https://qwenlm.github.io/blog/qwen3-embedding/",
+      "inspected_url": "https://arxiv.org/abs/2506.05176",
+      "inspected_scope": "Official release and official Qwen3-Reranker-0.6B model card",
+      "applicability_limit": "local Apache-2.0 embedding/reranker comparator; general benchmarks only"
+    },
+    {
+      "source_id": "jina2026",
+      "title": "jina-embeddings-v5-text: Task-Targeted Embedding Distillation",
+      "date": "2026-02-18",
+      "publication_status": "official model release; technical preprint dated 2026-02-17",
+      "url": "https://huggingface.co/jinaai/jina-embeddings-v5-text-small",
+      "inspected_url": "https://arxiv.org/abs/2602.15547",
+      "inspected_scope": "Model card release date, adapters, requirements, licence",
+      "applicability_limit": "677M challenger, CC-BY-NC-4.0; verify research/commercial use distinction"
+    },
+    {
+      "source_id": "embeddinggemma2",
+      "title": "EmbeddingGemma 2: The Developer Guide",
+      "date": "2026-10-06",
+      "publication_status": "official model/developer release",
+      "url": "https://developers.googleblog.com/embeddinggemma-2-the-developer-guide/",
+      "inspected_url": "https://developers.googleblog.com/embeddinggemma-2-the-developer-guide/",
+      "inspected_scope": "Text-only configuration, Apache-2.0, library requirements",
+      "applicability_limit": "270M text-only challenger; isolate newer dependencies"
+    },
+    {
+      "source_id": "cohere_rerank5",
+      "title": "Announcing Cohere's Rerank 5 Models",
+      "date": "2026-10-21",
+      "publication_status": "official hosted-model release",
+      "url": "https://docs.cohere.com/v2/changelog/rerank-v5",
+      "inspected_url": "https://docs.cohere.com/v2/changelog/rerank-v5",
+      "inspected_scope": "Release notes and model identifiers; no API calls",
+      "applicability_limit": "optional hosted comparator; relevance calibration is not semantic relation calibration"
+    },
+    {
+      "source_id": "rrf2009",
+      "title": "Reciprocal rank fusion outperforms condorcet and individual rank learning methods",
+      "date": "2009",
+      "publication_status": "SIGIR paper",
+      "url": "https://doi.org/10.1145/1571941.1572114",
+      "inspected_url": "https://doi.org/10.1145/1571941.1572114",
+      "inspected_scope": "Publisher abstract",
+      "applicability_limit": "established rank-fusion control, explicitly not a recent invention"
+    }
+  ]
+}

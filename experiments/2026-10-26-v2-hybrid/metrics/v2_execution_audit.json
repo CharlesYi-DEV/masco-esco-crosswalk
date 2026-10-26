@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "run_id": "full_20261026_k10",
+      "queries": 6620,
+      "rows": 397200,
+      "methods": 6,
+      "k": 10,
+      "elapsed_seconds": 117.37,
+      "candidate_sha256": "6d7bf0ab9336a2c1362b3aa0c9727ce4547f10525ea1c4935a208b76ecd11265"
+    },
+    {
+      "run_id": "v2_minilm_full",
+      "queries": 6620,
+      "rows": 2648000,
+      "methods": 4,
+      "k": 100,
+      "elapsed_seconds": 25.85,
+      "candidate_sha256": "fa5b8dfaf7776cc010122594b60ed8445f31c61a2811eeaab2ab4a185010e876"
+    },
+    {
+      "run_id": "v2_qwen_full",
+      "queries": 6620,
+      "rows": 2648000,
+      "methods": 4,
+      "k": 100,
+      "elapsed_seconds": 220.5,
+      "candidate_sha256": "40d96515e5d143ff48825be58ed00d0d9d6526b09205beb6412ee61a4fb54c00"
+    },
+    {
+      "run_id": "v2_gemma2_full",
+      "queries": 6620,
+      "rows": 2648000,
+      "methods": 4,
+      "k": 100,
+      "elapsed_seconds": 135.26,
+      "candidate_sha256": "ab1d627791c77e3fd2e5b6ad6534cea14626222f894a9bc1d1ba3675ac9d0793"
+    },
+    {
+      "run_id": "v2_jina5_full",
+      "queries": 6620,
+      "rows": 2648000,
+      "methods": 4,
+      "k": 100,
+      "elapsed_seconds": 299.36,
+      "candidate_sha256": "89e81a5c482f118be7a73798aea2627eb7bae992bbb9f42d71fc9dc51bdc8e0a"
+    },
+    {
+      "run_id": "v2_rerank_review",
+      "queries": 330,
+      "rows": 132000,
+      "methods": 4,
+      "k": 100,
+      "elapsed_seconds": 808.28,
+      "candidate_sha256": "2408b055bd065834df8f37cd349f5eef2d7422d85753ad36e8d9573d014d9109"
+    }
+  ],
+  "blinded_pairs": 13782,
+  "review_sources": 330,
+  "methods": 20,
+  "original_decisions_rows": 0,
+  "original_accepted_rows": 0,
+  "equal_reviewer_candidate_sets": true,
+  "original_sample_and_partition_unchanged": true,
+  "measured_accuracy": null,
+  "measured_improvement": null
+}

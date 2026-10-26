@@ -1,0 +1,127 @@
+{
+  "study_id": "masco2020-esco121",
+  "frozen_on": "2026-10-26",
+  "client_timezone": "Asia/Kuala_Lumpur",
+  "sources": [
+    {
+      "source_id": "masco2020_en",
+      "publisher": "Ministry of Human Resources, Malaysia; Human Resources Policy Division",
+      "title": "Malaysia Standard Classification of Occupations 2020",
+      "edition": "2020, English publication",
+      "source_url": "https://emasco.mohr.gov.my/system-api/storage/uploads/masco_2020_en.pdf",
+      "retrieval_date": "2026-10-26",
+      "acquisition_method": "Direct HTTPS download from official eMASCO government host",
+      "edition_evidence": "PDF physical pp.1-3 and 7; 602 pages; metadata creation 2021-03-18 is not a different edition",
+      "language": "en",
+      "license": "No open licence identified. Restrictive reproduction/storage/transmission notice on PDF p.2.",
+      "license_evidence": "masco_2020_en.pdf physical p.2",
+      "unresolved_restrictions": "Do not assume permission to redistribute original PDF, extracted descriptions/tasks, or a full derived inventory. Establish publication/redistribution permissions before release; local research has not resolved those rights.",
+      "files": [
+        {
+          "path": "sources/raw/masco_2020_en.pdf",
+          "bytes": 32837148,
+          "sha256": "4ab3736cd6890afcad3ab2d5a87499e66c468f749cc6ed4ea96b22a20c2fc97e"
+        }
+      ]
+    },
+    {
+      "source_id": "esco_v1.2.1_en",
+      "publisher": "European Commission, DG Employment, Social Affairs and Inclusion",
+      "title": "ESCO dataset - v1.2.1 - classification - en - csv",
+      "edition": "1.2.1",
+      "source_url": "https://esco.ec.europa.eu/en/use-esco/download",
+      "release_evidence_url": "https://esco.ec.europa.eu/en/about-esco/escopedia/escopedia/esco-versions",
+      "release_date": "2025-12-10",
+      "retrieval_date": null,
+      "research_snapshot_date": "2026-10-26",
+      "acquisition_method": "Imported existing official-release ZIP from pilot workspace; extracted occupation CSV byte-identical to pilot raw snapshot. Original download timestamp and resolved archive URL unavailable.",
+      "language": "en",
+      "license": "ESCO is offered for free use; general European Commission reuse notice CC BY 4.0 unless otherwise indicated. No dataset-specific licence file in archived ZIP.",
+      "license_evidence": "sources/evidence/ec_legal_notice.html; official download page; archive member inventory",
+      "unresolved_restrictions": "Attribution and change notices required under general reuse policy; verify any dataset-specific exceptions before redistribution. API software EUPL licence is not treated as the dataset licence.",
+      "files": [
+        {
+          "path": "sources/raw/esco_v1.2.1_en_csv.zip",
+          "bytes": 10045670,
+          "sha256": "f9761b0b52be1828b38a3e5e0ae59a93a7b0ce358bc800f52f57a8b002adeb3e"
+        },
+        {
+          "path": "sources/raw/esco_v1.2.1/occupations_en.csv",
+          "bytes": 3047703,
+          "sha256": "8034348d84b6d1dd24a5bcf9609186ecbba0a85457ee2eacd65bddec33a51b4a"
+        }
+      ]
+    },
+    {
+      "source_id": "minilm",
+      "publisher": "sentence-transformers model repository",
+      "title": "sentence-transformers/all-MiniLM-L6-v2",
+      "edition": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "source_url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/tree/1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "retrieval_date": null,
+      "research_snapshot_date": "2026-10-26",
+      "acquisition_method": "Copied existing local Hugging Face snapshot with symlinks dereferenced; original download timestamp unknown",
+      "license": "Apache-2.0 declared in archived model card",
+      "license_evidence": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md",
+      "unresolved_restrictions": "Retain model attribution/licence notices on redistribution; model scores are not validation.",
+      "files": [
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling/config.json",
+          "bytes": 190,
+          "sha256": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md",
+          "bytes": 10502,
+          "sha256": "dcd602d2fd35c203a247304a06fec6654a12f7941b739f9221a064fe8dc3b7f0"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json",
+          "bytes": 612,
+          "sha256": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json",
+          "bytes": 116,
+          "sha256": "061ca9d39661d6c6d6de5ba27f79a1cd5770ea247f8d46412a68a498dc5ac9f3"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/model.safetensors",
+          "bytes": 90868376,
+          "sha256": "53aa51172d142c89d9012cce15ae4d6cc0ca6895895114379cacb4fab128d9db"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json",
+          "bytes": 349,
+          "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json",
+          "bytes": 53,
+          "sha256": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json",
+          "bytes": 112,
+          "sha256": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json",
+          "bytes": 466247,
+          "sha256": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json",
+          "bytes": 350,
+          "sha256": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b"
+        },
+        {
+          "path": "sources/raw/minilm_1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt",
+          "bytes": 231508,
+          "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+        }
+      ]
+    }
+  ],
+  "repository_note": "Provenance metadata only. Source files and model weights are obtained separately and are not redistributed."
+}

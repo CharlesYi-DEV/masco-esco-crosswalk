@@ -1,0 +1,18 @@
+method,variant,comparison,sources,mean_shared_top10,same_top1_count,interpretation
+bm25,title_context,v2 hybrid MiniLM,330,6.003030303030303,170,Unlabelled agreement only; not accuracy or improvement
+dense_gemma2,title_context,v2 hybrid MiniLM,330,4.927272727272728,149,Unlabelled agreement only; not accuracy or improvement
+dense_jina5_retrieval,title_context,v2 hybrid MiniLM,330,5.736363636363636,184,Unlabelled agreement only; not accuracy or improvement
+dense_minilm,title_context,v2 hybrid MiniLM,330,5.239393939393939,150,Unlabelled agreement only; not accuracy or improvement
+dense_qwen_embedding,title_context,v2 hybrid MiniLM,330,5.106060606060606,171,Unlabelled agreement only; not accuracy or improvement
+hybrid_gemma2,title_context,v2 hybrid MiniLM,330,7.739393939393939,232,Unlabelled agreement only; not accuracy or improvement
+hybrid_gemma2_qwen3_reranked,title_context,v2 hybrid MiniLM,330,5.248484848484848,162,Unlabelled agreement only; not accuracy or improvement
+hybrid_jina5_retrieval,title_context,v2 hybrid MiniLM,330,7.963636363636364,246,Unlabelled agreement only; not accuracy or improvement
+hybrid_jina5_retrieval_qwen3_reranked,title_context,v2 hybrid MiniLM,330,5.224242424242425,162,Unlabelled agreement only; not accuracy or improvement
+hybrid_minilm,title_context,v2 hybrid MiniLM,330,10.0,330,Unlabelled agreement only; not accuracy or improvement
+hybrid_minilm_qwen3_reranked,title_context,v2 hybrid MiniLM,330,5.251515151515152,162,Unlabelled agreement only; not accuracy or improvement
+hybrid_qwen_embedding,title_context,v2 hybrid MiniLM,330,7.8121212121212125,256,Unlabelled agreement only; not accuracy or improvement
+hybrid_qwen_embedding_qwen3_reranked,title_context,v2 hybrid MiniLM,330,5.260606060606061,162,Unlabelled agreement only; not accuracy or improvement
+lexical_tfidf,title_context,v2 hybrid MiniLM,330,5.909090909090909,167,Unlabelled agreement only; not accuracy or improvement
+minilm,title_context,v2 hybrid MiniLM,330,4.66969696969697,124,Unlabelled agreement only; not accuracy or improvement
+tfidf,title_context,v2 hybrid MiniLM,330,6.042424242424242,175,Unlabelled agreement only; not accuracy or improvement
+weighted_minilm_adaptation,title_context,v2 hybrid MiniLM,330,3.639393939393939,89,Unlabelled agreement only; not accuracy or improvement

@@ -1,0 +1,78 @@
+{
+  "review_sources": 330,
+  "methods": 20,
+  "original_pairs": 9063,
+  "expanded_pairs": 13782,
+  "added_pairs": 4719,
+  "reranking_changes": [
+    {
+      "encoder": "MiniLM",
+      "top1_changed_percent": 50.90909090909091,
+      "top10_replaced_percent": 47.484848484848484,
+      "sources": 330
+    },
+    {
+      "encoder": "Qwen3",
+      "top1_changed_percent": 50.0,
+      "top10_replaced_percent": 45.75757575757576,
+      "sources": 330
+    },
+    {
+      "encoder": "EmbeddingGemma 2",
+      "top1_changed_percent": 49.39393939393939,
+      "top10_replaced_percent": 46.03030303030303,
+      "sources": 330
+    },
+    {
+      "encoder": "Jina v5",
+      "top1_changed_percent": 48.78787878787879,
+      "top10_replaced_percent": 45.84848484848485,
+      "sources": 330
+    }
+  ],
+  "mean_encoder_agreement": {
+    "hybrid": {
+      "shared_top10_percent": 80.81313131313131,
+      "same_top1_percent": 76.36363636363637
+    },
+    "reranked": {
+      "shared_top10_percent": 94.13131313131312,
+      "same_top1_percent": 99.14141414141413
+    }
+  },
+  "human_accuracy_available": false,
+  "input_hashes": {
+    "outputs/v2_20261026_pool_audit/contributions_not_for_reviewers.csv": "c3b4205cbac6c837b4bce7e213e94a54c5a06e424d0f10f0d4c1b58d741af42c",
+    "outputs/v2_run_summary.csv": "2e5ac87f7da9b9b20f1a74fff43ff9df49caae71d221ae02d93f0c4208b621a2",
+    "outputs/v2_unlabelled_agreement.csv": "4f1b5ee6da0c2b34a2368317efc946d21be33dca2eaa99e6927c1d46a0c9cd30",
+    "review/sample.csv": "edb2f9074f99fc9578b24e46ae3bba369dd132db64594674488df37170026757",
+    "review/blinded_candidate_pool.csv": "0712b5ca7e7b5379483b63b346524cf856ddaf8d8111347c3ad098bc33169a08",
+    "review/v2_20261026/blinded_candidate_pool.csv": "076e77f2ad5d1601370c0e0474ca85f2096616a9f68c6fc7555d1308a49596a9",
+    "data/processed/masco_groups.csv": "1fffb301fad76faad14c1952f49598c839ff7c6c5e27c25f3571573166b15fa2",
+    "configs/review_pool_v2.json": "c9433a0ad5ed3799abc076d3dde4880bfece75a10eb2c302cf7991bb623c3475",
+    "outputs/v2_rerank_review/run.json": "00ef4db8e5158f228bfbc0056cb650f2148d0a6891b2753b6aeeb6f81004e263"
+  },
+  "script_sha256": "b0453551f6a390d2ce1bc2f269c9e54af8e7448554332a636f354fdf42a6c549",
+  "dependencies": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4"
+  },
+  "figures": [
+    {
+      "file": "01_overview",
+      "caption": "Runtime, reranking changes, pool growth, and cross-encoder agreement. Descriptive only."
+    },
+    {
+      "file": "02_all_methods",
+      "caption": "All methods compared with the matched-input MiniLM hybrid. Agreement is not correctness."
+    },
+    {
+      "file": "03_encoder_agreement",
+      "caption": "Pairwise encoder agreement before and after common reranking. Same 0\u2013100% scale."
+    },
+    {
+      "file": "04_pool_by_group",
+      "caption": "Blinded pool growth by MASCO major group, with 33 sampled sources in each group."
+    }
+  ]
+}

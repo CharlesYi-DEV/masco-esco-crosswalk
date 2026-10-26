@@ -1,0 +1,136 @@
+{
+  "spec_version": "2.0-proposed",
+  "date": "2026-10-26",
+  "execution_status": "not_implemented_or_executed",
+  "purpose": "Controlled upgrades to the frozen occupation-crosswalk retrieval baselines; this file is not an executable runner",
+  "source_versions": {
+    "masco": "2020",
+    "esco": "1.2.1"
+  },
+  "frozen_input_hashes": {
+    "data/processed/masco_occupations.csv": "2cc7f6dc1468d74b80092105a499ee1728f7366501b28e53cbc71d768f223057",
+    "data/processed/masco_group_context.csv": "9b407610ae6b33907029ceaa58905a27e05ef4adcb22afc27adc78f9e870c372",
+    "data/processed/esco_occupations.csv": "6a3a216b5f28ed1f1118e65b3e6b5ba230fbba3c19cefa17c6ab648890524746"
+  },
+  "preserve_existing_runs": true,
+  "new_run_environment": "separate environment; never upgrade original retrieval environment in place",
+  "models": [
+    {
+      "id": "google/embeddinggemma-2",
+      "revision": null,
+      "status": "must_pin_before_execution",
+      "configuration": "text-only; official query/document prompts",
+      "release_date": "2026-10-06",
+      "licence_observed": "Apache-2.0"
+    },
+    {
+      "id": "jinaai/jina-embeddings-v5-text-small",
+      "revision": null,
+      "status": "must_pin_before_execution",
+      "configuration": "retrieval and text-matching adapters as separate ablations",
+      "release_date": "2026-02-18",
+      "licence_observed": "CC-BY-NC-4.0"
+    },
+    {
+      "id": "Qwen/Qwen3-Embedding-0.6B",
+      "revision": null,
+      "status": "must_pin_before_execution",
+      "configuration": "official instruction format; consistent target labels",
+      "release_date": "2025-06-05",
+      "licence_observed": "Apache-2.0"
+    }
+  ],
+  "retrieval": {
+    "channels": [
+      "word_bm25",
+      "character_tfidf",
+      "chosen_dense_encoder"
+    ],
+    "top_k_per_channel": 100,
+    "fusion": "reciprocal_rank_fusion",
+    "rrf_rank_constant": 60,
+    "fused_pool_size": 100,
+    "collapse_alias_hits_to_uri_before_fusion": true,
+    "numeric_masco_isco_filter": false,
+    "exact_vector_scoring": true,
+    "values_are_initial_design_choices_not_empirically_optimized": true
+  },
+  "reranking": {
+    "local_model": "Qwen/Qwen3-Reranker-0.6B",
+    "revision": null,
+    "input_pairs_per_source": 100,
+    "retain_scored_pairs": 100,
+    "display_top_k": 10,
+    "full_inventory_pair_scores": 662000,
+    "initial_30_source_pair_scores": 3000,
+    "score_interpretation": "relevance_ranking_not_equivalence_or_probability"
+  },
+  "scope_assessor": {
+    "model": null,
+    "status": "research_proposal_after_evidence_calibration",
+    "checks": [
+      "source_contained_in_target",
+      "target_contained_in_source",
+      "material_overlap",
+      "scope_conflict"
+    ],
+    "check_values": [
+      "supported",
+      "contradicted",
+      "unknown"
+    ],
+    "output_relations": [
+      "equivalent_scope",
+      "masco_narrower_than_esco",
+      "masco_broader_than_esco",
+      "close_overlap_without_containment",
+      "related_insufficient",
+      "incorrect_candidate"
+    ],
+    "allow_null_relation_for_insufficient_evidence": true,
+    "record_type": "separate_ai_proposal_not_human_decision",
+    "validate_uri_and_evidence_spans": true,
+    "individual_duties_inferred_from_parent": false,
+    "allow_multiple_targets": true,
+    "allow_zero_targets": true,
+    "human_acceptance_gate_unchanged": true
+  },
+  "ablation_order": [
+    "E0_frozen_baselines",
+    "E1_raw_cleaned_and_label_parity",
+    "E2_encoder_comparison",
+    "E3_hybrid_rank_fusion",
+    "E4_pairwise_reranking",
+    "E5_scope_assessment",
+    "E6_optional_human_labelled_adaptation"
+  ],
+  "evaluation": {
+    "existing_sample": "review/sample.csv",
+    "partition": "review/unit_partition.csv",
+    "new_blinded_pool_required": true,
+    "overwrite_old_review_pool": false,
+    "choose_models_on_development_only": true,
+    "no_pilot_or_ai_ground_truth": true,
+    "recall_requires_exhaustive_reference": true,
+    "primary_outcome_proposal": "independently_referenced_Recall_at_10_for_retrieval; preregister_before_test_labels",
+    "secondary": [
+      "Recall_at_50_100",
+      "relationship_errors",
+      "independent_accepted_pair_precision",
+      "review_minutes",
+      "unresolved_and_insufficient_evidence",
+      "latency_and_memory"
+    ],
+    "external_screening": "MELO with its own frozen versions and explicit ESCO-version reconciliation"
+  },
+  "optional_external_comparator": {
+    "model_ids": [
+      "rerank-v5.0-pro",
+      "rerank-v5.0-fast"
+    ],
+    "provider": "Cohere",
+    "release_date": "2026-10-21",
+    "status": "not_called; assess cost and obtain authorization before external data submission"
+  },
+  "measured_improvement": null
+}

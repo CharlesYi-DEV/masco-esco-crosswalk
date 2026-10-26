@@ -1,0 +1,21 @@
+method,input_variant,sources,shared_top10_percent,same_top1_percent,reference
+lexical_tfidf,title,330,31.666666666666668,23.333333333333332,hybrid_minilm / title_context
+lexical_tfidf,title_context,330,59.09090909090909,50.60606060606061,hybrid_minilm / title_context
+minilm,title,330,32.03030303030303,22.727272727272727,hybrid_minilm / title_context
+minilm,title_context,330,46.696969696969695,37.57575757575758,hybrid_minilm / title_context
+weighted_minilm_adaptation,title,330,32.90909090909091,25.454545454545453,hybrid_minilm / title_context
+weighted_minilm_adaptation,title_context,330,36.39393939393939,26.96969696969697,hybrid_minilm / title_context
+bm25,title_context,330,60.03030303030303,51.515151515151516,hybrid_minilm / title_context
+tfidf,title_context,330,60.42424242424242,53.03030303030303,hybrid_minilm / title_context
+dense_minilm,title_context,330,52.39393939393939,45.45454545454545,hybrid_minilm / title_context
+dense_qwen_embedding,title_context,330,51.06060606060606,51.81818181818182,hybrid_minilm / title_context
+dense_gemma2,title_context,330,49.27272727272727,45.15151515151515,hybrid_minilm / title_context
+dense_jina5_retrieval,title_context,330,57.36363636363637,55.75757575757576,hybrid_minilm / title_context
+hybrid_minilm,title_context,330,100.0,100.0,hybrid_minilm / title_context
+hybrid_qwen_embedding,title_context,330,78.12121212121212,77.57575757575758,hybrid_minilm / title_context
+hybrid_gemma2,title_context,330,77.39393939393939,70.3030303030303,hybrid_minilm / title_context
+hybrid_jina5_retrieval,title_context,330,79.63636363636364,74.54545454545455,hybrid_minilm / title_context
+hybrid_minilm_qwen3_reranked,title_context,330,52.515151515151516,49.09090909090909,hybrid_minilm / title_context
+hybrid_qwen_embedding_qwen3_reranked,title_context,330,52.60606060606061,49.09090909090909,hybrid_minilm / title_context
+hybrid_gemma2_qwen3_reranked,title_context,330,52.484848484848484,49.09090909090909,hybrid_minilm / title_context
+hybrid_jina5_retrieval_qwen3_reranked,title_context,330,52.24242424242424,49.09090909090909,hybrid_minilm / title_context

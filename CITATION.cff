@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite this repository when using its research implementation or aggregate results."
+title: "MASCO–ESCO Crosswalk Research"
+type: software
+version: 0.1.0
+date-released: 2026-10-26
+authors:
+  - family-names: Yi
+    given-names: Charles
+repository-code: "https://github.com/CharlesYi-DEV/masco-esco-crosswalk"
+url: "https://github.com/CharlesYi-DEV/masco-esco-crosswalk"
+abstract: "Reproducible candidate-generation experiments for a MASCO 2020 to ESCO v1.2.1 occupational crosswalk, with hybrid retrieval, reranking and a blinded human-validation framework."

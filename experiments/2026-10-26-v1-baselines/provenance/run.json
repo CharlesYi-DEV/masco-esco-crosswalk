@@ -1,0 +1,58 @@
+{
+  "run_id": "full_20261026_k10",
+  "scope": "full",
+  "seed": 20261026,
+  "query_count": 6620,
+  "target_count": 3039,
+  "candidate_rows": 397200,
+  "k": 10,
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "device": "cpu",
+  "model_max_seq_length": 256,
+  "normalize_embeddings": true,
+  "batch_size": 64,
+  "torch_threads": 4,
+  "lexical": {
+    "analyzer": "char_wb",
+    "ngram_range": [
+      3,
+      5
+    ],
+    "sublinear_tf": true,
+    "fit_corpus": "ESCO only",
+    "alternative_labels": true
+  },
+  "weighted_comparison": "0.65 title cosine + 0.20 profile cosine + 0.15 best-label SequenceMatcher; exact preferred/alternate floors .995/.985; top30 title union top20 profile union exact labels; no inherited pair injection",
+  "weighted_vs_pilot_difference": "MASCO publication unit-group descriptions replace inherited portal profiles; targets use preferred title + description; no inherited pair in pool, no manual decisions. Adaptation, not exact historical replay.",
+  "title_context": "MASCO title + explicitly qualified unit-group description; ESCO preferred title + description; tasks retained in source table but not used in this baseline",
+  "title_cleaning": "pilot clean_title removes Grade suffix and Competent Person (CP) prefix; original preserved",
+  "title_context_truncated_queries": 0,
+  "target_profile_truncated": 0,
+  "score_is_probability": false,
+  "independent_human_validation": false,
+  "numeric_hierarchy_used": false,
+  "elapsed_seconds": 117.37,
+  "python": "3.13.9",
+  "dependencies": {
+    "numpy": "2.5.2",
+    "scikit-learn": "1.9.0",
+    "sentence-transformers": "5.7.0",
+    "torch": "2.13.0",
+    "transformers": "5.16.1",
+    "tokenizers": "0.23.1",
+    "huggingface-hub": "1.29.0",
+    "safetensors": "0.8.0"
+  },
+  "inputs": {
+    "data/processed/masco_occupations.csv": "2cc7f6dc1468d74b80092105a499ee1728f7366501b28e53cbc71d768f223057",
+    "data/processed/masco_group_context.csv": "9b407610ae6b33907029ceaa58905a27e05ef4adcb22afc27adc78f9e870c372",
+    "data/processed/esco_occupations.csv": "6a3a216b5f28ed1f1118e65b3e6b5ba230fbba3c19cefa17c6ab648890524746"
+  },
+  "candidate_sha256": "6d7bf0ab9336a2c1362b3aa0c9727ce4547f10525ea1c4935a208b76ecd11265",
+  "structural_smoke_checks_passed": true,
+  "script_sha256": "be3f7934e5def6a4af3b0837a8b23b7865d86fcef962c348820a9ef16d047cd6",
+  "script_hash_recorded_after_execution": true,
+  "executed_script_archive": "sources/pipeline/retrieve_executed_20261026.py",
+  "common_helper_sha256": "3d546498d2ce2ae349dfaff93196daa80ebe6c68c7afe6470b7f22e8848761a9"
+}

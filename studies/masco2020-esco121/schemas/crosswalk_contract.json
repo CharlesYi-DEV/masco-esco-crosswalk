@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "source_occupation_key": ["source_id", "source_version", "code"],
+  "target_occupation_key": ["source_id", "source_version", "concept_uri"],
+  "candidate_key": ["run_id", "method", "input_variant", "masco_code", "esco_uri"],
+  "candidate_rule": "Scores and ranks never imply an accepted mapping or a review confidence.",
+  "decision_key": "decision_id",
+  "relation_direction": "MASCO source occupation to ESCO target occupation",
+  "relations": ["equivalent_scope", "masco_narrower_than_esco", "masco_broader_than_esco", "close_overlap_without_containment", "related_insufficient", "incorrect_candidate"],
+  "review_stages": ["independent", "adjudication", "ai_proposal"],
+  "reviewer_types": ["human", "ai"],
+  "occupation_statuses": ["unresolved", "insufficient_evidence", "matched", "no_suitable_match_found", "reviewed_no_suitable_match"],
+  "search_statuses": ["not_reviewed", "shortlist_only", "broader_search_incomplete", "documented_broader_search_reviewed"],
+  "reference_completeness": ["partial_pool", "exhaustive"],
+  "accepted_mapping_key": ["masco_version", "masco_code", "esco_version", "esco_uri"],
+  "cardinality": "A MASCO occupation has zero, one, or many accepted ESCO counterparts; an ESCO occupation may receive many MASCO occupations.",
+  "acceptance_policy": "Two distinct independent human reviewers with evidence, a separate human adjudicator, explicit completed adjudication and acceptable relation. No automatic migration of pilot proxy labels.",
+  "versioning": "Never overwrite source imports, completed reviewer decisions or released accepted mappings. Superseding decisions must reference prior IDs in rationale and be resolved into a new release input.",
+  "skills": "Not part of crosswalk acceptance. Later skill transfer is separately evaluated and preserves official essential/optional labels; 100/50 are pilot project weights only."
+}

@@ -1,0 +1,27 @@
+{
+  "retrieval": {
+    "scope": "full",
+    "variants": [
+      "title_context"
+    ],
+    "batch_size": 32,
+    "k": 100,
+    "device": "mps",
+    "dtype_requested": "bfloat16",
+    "encoders": [
+      "minilm",
+      "qwen_embedding",
+      "gemma2",
+      "jina5_retrieval"
+    ]
+  },
+  "reranking": {
+    "scope": "review",
+    "batch_size": 32,
+    "device": "mps",
+    "dtype": "bfloat16",
+    "backend": "mlx",
+    "top_k_input": 100
+  },
+  "note": "Supplemental record of executed CLI parameters; original completed run metadata is preserved."
+}

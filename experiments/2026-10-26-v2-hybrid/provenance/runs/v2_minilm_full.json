@@ -1,0 +1,47 @@
+{
+  "run_id": "v2_minilm_full",
+  "status": "completed",
+  "scope": "full",
+  "encoder": "minilm",
+  "model": {
+    "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "device": "mps",
+  "dtype": "bfloat16",
+  "query_count": 6620,
+  "target_count": 3039,
+  "k": 100,
+  "variants": [
+    "title_context"
+  ],
+  "candidate_rows": 2648000,
+  "seed": 20261026,
+  "inputs": {
+    "data/processed/masco_occupations.csv": "2cc7f6dc1468d74b80092105a499ee1728f7366501b28e53cbc71d768f223057",
+    "data/processed/masco_group_context.csv": "9b407610ae6b33907029ceaa58905a27e05ef4adcb22afc27adc78f9e870c372",
+    "data/processed/esco_occupations.csv": "6a3a216b5f28ed1f1118e65b3e6b5ba230fbba3c19cefa17c6ab648890524746"
+  },
+  "rrf_constant": 60,
+  "lexical_fit_corpus": "ESCO only",
+  "alias_policy": "one canonical document per URI; unique aliases included once; equal text across methods",
+  "query_policy": "raw titles; no grade or authority removal",
+  "numeric_hierarchy_filter": false,
+  "instruction": "Given a Malaysian occupation and explicitly qualified unit-group context, retrieve ESCO occupations relevant to its occupational activities and scope. Group context is not a statement of individual duties.",
+  "diagnostics": [
+    {
+      "variant": "title_context",
+      "max_seq_length": 256,
+      "query_max_unprefixed_tokens": 132,
+      "target_max_unprefixed_tokens": 538,
+      "query_over_limit": 0,
+      "target_over_limit": 26
+    }
+  ],
+  "script_sha256": "ac6614dd22a314b689500e6e8e9d5a971da6907d9b734bd397f86aa5a06eaa3a",
+  "candidate_sha256": "fa5b8dfaf7776cc010122594b60ed8445f31c61a2811eeaab2ab4a185010e876",
+  "environment_sha256": "a1f9798e5ab339a4bd9a3c19cf55b7aa3da3fbfb389d3bb899da8663ffeda774",
+  "elapsed_seconds": 25.85,
+  "human_validation": false,
+  "measured_accuracy": null
+}

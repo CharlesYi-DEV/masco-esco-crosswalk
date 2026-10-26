@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "study": "masco2020-esco121",
+  "experiments": [
+    {
+      "id": "2026-10-26-v1-baselines",
+      "parent": null,
+      "status": "completed_candidate_generation",
+      "path": "2026-10-26-v1-baselines",
+      "human_validation": false
+    },
+    {
+      "id": "2026-10-26-v2-hybrid",
+      "parent": "2026-10-26-v1-baselines",
+      "status": "completed_candidate_generation",
+      "path": "2026-10-26-v2-hybrid",
+      "human_validation": false
+    }
+  ]
+}

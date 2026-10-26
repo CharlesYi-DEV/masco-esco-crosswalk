@@ -1,0 +1,674 @@
+{
+  "data/processed/masco_occupations.csv": {
+    "source_id": {
+      "type": "string",
+      "description": "Foreign key to source_manifest.json; names a frozen import, not a changing portal."
+    },
+    "source_version": {
+      "type": "string",
+      "description": "Edition/version string from the source manifest."
+    },
+    "source_sha256": {
+      "type": "string",
+      "description": "SHA-256 of the original source PDF/CSV, never of a translated or normalized substitute."
+    },
+    "code": {
+      "type": "string",
+      "description": "Source classification identifier; exact string, preserving leading zeros and printed hyphen."
+    },
+    "code_digits": {
+      "type": "string",
+      "description": "Six-character machine key with only the printed hyphen removed; leading zeros retained."
+    },
+    "parent_code": {
+      "type": "string",
+      "description": "Parent MASCO code; hierarchy membership within MASCO only, not an ISCO crosswalk."
+    },
+    "major_group": {
+      "type": "string",
+      "description": "First MASCO digit, including 0 for Armed Forces."
+    },
+    "title_original": {
+      "type": "string",
+      "description": "Source wording selected from the documented evidence; whitespace reconstructed, source spelling/case retained."
+    },
+    "title_evidence_section": {
+      "type": "string",
+      "description": "Where the selected title was found; may differ from the systematic identity row."
+    },
+    "title_pdf_page": {
+      "type": "integer",
+      "description": "1-based physical page supporting selected title, including alphabetical fallback."
+    },
+    "title_y_top": {
+      "type": "number",
+      "description": "Title evidence top coordinate in PDF points."
+    },
+    "language": {
+      "type": "string",
+      "description": "Source language code: en for the English publication. Some proper names/section headings are Malaysian-language text."
+    },
+    "pdf_page": {
+      "type": "integer",
+      "description": "1-based physical source PDF page for this occurrence/identity."
+    },
+    "printed_page": {
+      "type": "string",
+      "description": "Printed page label; systematic index page = physical page minus 14."
+    },
+    "y_top": {
+      "type": "number",
+      "description": "Top coordinate in PDF points (origin upper left) of the source row."
+    },
+    "individual_description": {
+      "type": "string",
+      "description": "Empty: no individual-level description asserted; group context is kept separately."
+    },
+    "individual_tasks": {
+      "type": "string",
+      "description": "Empty: parent tasks are not individual duties."
+    },
+    "context_code": {
+      "type": "string",
+      "description": "Join to masco_group_context.code; explicitly a parent group."
+    },
+    "context_scope": {
+      "type": "string",
+      "description": "major_group, sub_major_group, minor_group or unit_group; never silently individual."
+    },
+    "alphabetical_occurrences": {
+      "type": "integer",
+      "description": "Count of visible alphabetical rows for this code, not number of unique occupations."
+    },
+    "extraction_status": {
+      "type": "string",
+      "description": "machine_extracted_unreviewed; does not assert human validation."
+    }
+  },
+  "data/processed/masco_groups.csv": {
+    "source_id": {
+      "type": "string",
+      "description": "Foreign key to source_manifest.json; names a frozen import, not a changing portal."
+    },
+    "source_version": {
+      "type": "string",
+      "description": "Edition/version string from the source manifest."
+    },
+    "source_sha256": {
+      "type": "string",
+      "description": "SHA-256 of the original source PDF/CSV, never of a translated or normalized substitute."
+    },
+    "code": {
+      "type": "string",
+      "description": "Source classification identifier; exact string, preserving leading zeros and printed hyphen."
+    },
+    "level": {
+      "type": "string",
+      "description": "major (1 digit), sub_major (2), minor (3), unit (4)."
+    },
+    "parent_code": {
+      "type": "string",
+      "description": "Parent MASCO code; hierarchy membership within MASCO only, not an ISCO crosswalk."
+    },
+    "title_original": {
+      "type": "string",
+      "description": "Source wording selected from the documented evidence; whitespace reconstructed, source spelling/case retained."
+    },
+    "language": {
+      "type": "string",
+      "description": "Source language code: en for the English publication. Some proper names/section headings are Malaysian-language text."
+    },
+    "pdf_page": {
+      "type": "integer",
+      "description": "1-based physical source PDF page for this occurrence/identity."
+    },
+    "y_top": {
+      "type": "number",
+      "description": "Top coordinate in PDF points (origin upper left) of the source row."
+    },
+    "title_evidence_section": {
+      "type": "string",
+      "description": "Where the selected title was found; may differ from the systematic identity row."
+    },
+    "context_available": {
+      "type": "boolean",
+      "description": "Whether an extracted narrative record exists; not a quality assurance claim."
+    },
+    "context_scope": {
+      "type": "string",
+      "description": "major_group, sub_major_group, minor_group or unit_group; never silently individual."
+    },
+    "review_status": {
+      "type": "string",
+      "description": "Machine/unreviewed state or explicit completed human decision state; never inferred from score."
+    }
+  },
+  "data/processed/masco_group_context.csv": {
+    "code": {
+      "type": "string",
+      "description": "Source classification identifier; exact string, preserving leading zeros and printed hyphen."
+    },
+    "source_id": {
+      "type": "string",
+      "description": "Foreign key to source_manifest.json; names a frozen import, not a changing portal."
+    },
+    "source_sha256": {
+      "type": "string",
+      "description": "SHA-256 of the original source PDF/CSV, never of a translated or normalized substitute."
+    },
+    "context_scope": {
+      "type": "string",
+      "description": "major_group, sub_major_group, minor_group or unit_group; never silently individual."
+    },
+    "pdf_page_start": {
+      "type": "integer",
+      "description": "First physical page of context block."
+    },
+    "pdf_page_end": {
+      "type": "integer",
+      "description": "Last physical page represented in block."
+    },
+    "y_start": {
+      "type": "number",
+      "description": "Start-heading top coordinate."
+    },
+    "description": {
+      "type": "string",
+      "description": "Source description at the stated group/ESCO level; no generated paraphrase."
+    },
+    "tasks": {
+      "type": "string",
+      "description": "Source group task text; retained separately from description."
+    },
+    "inclusions": {
+      "type": "string",
+      "description": "Group examples/subgroup enumeration and inclusion-related text, not new individual inventory entries."
+    },
+    "exclusions": {
+      "type": "string",
+      "description": "Explicit exclusion/elsewhere-classified section where identified; blank does not prove none exist."
+    },
+    "other": {
+      "type": "string",
+      "description": "Other retained parsed section text, if any."
+    },
+    "raw_block": {
+      "type": "string",
+      "description": "Unsegmented visible block with physical page markers; consult when section parsing is uncertain."
+    },
+    "review_status": {
+      "type": "string",
+      "description": "Machine/unreviewed state or explicit completed human decision state; never inferred from score."
+    }
+  },
+  "data/processed/masco_index_occurrences.csv": {
+    "source_id": {
+      "type": "string",
+      "description": "Foreign key to source_manifest.json; names a frozen import, not a changing portal."
+    },
+    "source_sha256": {
+      "type": "string",
+      "description": "SHA-256 of the original source PDF/CSV, never of a translated or normalized substitute."
+    },
+    "section": {
+      "type": "string",
+      "description": "systematic_index, alphabetical_index, narrative_heading or classification_list."
+    },
+    "code": {
+      "type": "string",
+      "description": "Source classification identifier; exact string, preserving leading zeros and printed hyphen."
+    },
+    "title_original": {
+      "type": "string",
+      "description": "Source wording selected from the documented evidence; whitespace reconstructed, source spelling/case retained."
+    },
+    "language": {
+      "type": "string",
+      "description": "Source language code: en for the English publication. Some proper names/section headings are Malaysian-language text."
+    },
+    "pdf_page": {
+      "type": "integer",
+      "description": "1-based physical source PDF page for this occurrence/identity."
+    },
+    "printed_page": {
+      "type": "string",
+      "description": "Printed page label; systematic index page = physical page minus 14."
+    },
+    "y_top": {
+      "type": "number",
+      "description": "Top coordinate in PDF points (origin upper left) of the source row."
+    },
+    "masco2013_code_or_status": {
+      "type": "string",
+      "description": "Original comparison-column value; not an alternative 2020 identity."
+    }
+  },
+  "data/processed/masco_heading_occurrences.csv": {
+    "source_id": {
+      "type": "string",
+      "description": "Foreign key to source_manifest.json; names a frozen import, not a changing portal."
+    },
+    "source_sha256": {
+      "type": "string",
+      "description": "SHA-256 of the original source PDF/CSV, never of a translated or normalized substitute."
+    },
+    "section": {
+      "type": "string",
+      "description": "systematic_index, alphabetical_index, narrative_heading or classification_list."
+    },
+    "code": {
+      "type": "string",
+      "description": "Source classification identifier; exact string, preserving leading zeros and printed hyphen."
+    },
+    "title_original": {
+      "type": "string",
+      "description": "Source wording selected from the documented evidence; whitespace reconstructed, source spelling/case retained."
+    },
+    "language": {
+      "type": "string",
+      "description": "Source language code: en for the English publication. Some proper names/section headings are Malaysian-language text."
+    },
+    "pdf_page": {
+      "type": "integer",
+      "description": "1-based physical source PDF page for this occurrence/identity."
+    },
+    "printed_page": {
+      "type": "string",
+      "description": "Printed page label; systematic index page = physical page minus 14."
+    },
+    "y_top": {
+      "type": "number",
+      "description": "Top coordinate in PDF points (origin upper left) of the source row."
+    },
+    "masco2013_code_or_status": {
+      "type": "string",
+      "description": "Original comparison-column value; not an alternative 2020 identity."
+    }
+  },
+  "data/processed/esco_occupations.csv": {
+    "source_id": {
+      "type": "string",
+      "description": "Foreign key to source_manifest.json; names a frozen import, not a changing portal."
+    },
+    "source_version": {
+      "type": "string",
+      "description": "Edition/version string from the source manifest."
+    },
+    "source_sha256": {
+      "type": "string",
+      "description": "SHA-256 of the original source PDF/CSV, never of a translated or normalized substitute."
+    },
+    "concept_uri": {
+      "type": "string",
+      "description": "Stable ESCO occupation URI; primary target identity within version."
+    },
+    "code": {
+      "type": "string",
+      "description": "Source classification identifier; exact string, preserving leading zeros and printed hyphen."
+    },
+    "title_original": {
+      "type": "string",
+      "description": "Source wording selected from the documented evidence; whitespace reconstructed, source spelling/case retained."
+    },
+    "alt_labels": {
+      "type": "string",
+      "description": "Official ESCO alternate labels separated by newlines; not reviewed MASCO aliases."
+    },
+    "description": {
+      "type": "string",
+      "description": "Source description at the stated group/ESCO level; no generated paraphrase."
+    },
+    "isco_group": {
+      "type": "string",
+      "description": "ESCO-provided ISCO grouping retained as metadata; not used to rank MASCO pairs."
+    },
+    "language": {
+      "type": "string",
+      "description": "Source language code: en for the English publication. Some proper names/section headings are Malaysian-language text."
+    },
+    "csv_record_number": {
+      "type": "integer",
+      "description": "Logical CSV record number including header as record 1; multiline records are not physical line numbers."
+    },
+    "modified_date": {
+      "type": "string",
+      "description": "Source ESCO modification timestamp used for explicit duplicate-URI selection."
+    }
+  },
+  "outputs/full_20261026_k10/candidates.csv": {
+    "run_id": {
+      "type": "string",
+      "description": "Join to run.json for inputs, source/model hashes, parameters and runtime."
+    },
+    "method": {
+      "type": "string",
+      "description": "lexical_tfidf, minilm or weighted_minilm_adaptation."
+    },
+    "input_variant": {
+      "type": "string",
+      "description": "title or title_context; full actual input strings saved in query_inputs.csv."
+    },
+    "masco_version": {
+      "type": "string",
+      "description": "Fixed source edition string 2020."
+    },
+    "masco_code": {
+      "type": "string",
+      "description": "MASCO printed identifier; string including hyphen and leading zeros."
+    },
+    "esco_version": {
+      "type": "string",
+      "description": "Fixed target release string 1.2.1."
+    },
+    "esco_uri": {
+      "type": "string",
+      "description": "ESCO target URI; may be reviewer-added outside the shortlist."
+    },
+    "esco_code": {
+      "type": "string",
+      "description": "ESCO source code string, secondary to URI."
+    },
+    "rank": {
+      "type": "integer",
+      "description": "Genuine within-run, method, variant, MASCO-query rank; starts at 1."
+    },
+    "score": {
+      "type": "number",
+      "description": "Ranking similarity only, not probability, confidence or acceptance. Floating-point cosine can marginally exceed 1."
+    },
+    "score_type": {
+      "type": "string",
+      "description": "ranking_similarity_not_probability."
+    },
+    "title_cosine": {
+      "type": "number",
+      "description": "Normalized embedding dot product between cleaned source and preferred target titles."
+    },
+    "profile_cosine": {
+      "type": "number",
+      "description": "Profile embedding dot product; equals title cosine in title-only weighted adaptation."
+    },
+    "lexical_component": {
+      "type": "number",
+      "description": "Best normalized-label SequenceMatcher ratio used by weighted adaptation, not TF-IDF score."
+    },
+    "matched_label": {
+      "type": "string",
+      "description": "Target preferred/alternate label supplying weighted lexical evidence."
+    },
+    "label_boost": {
+      "type": "string",
+      "description": "Exact-label score floor applied by pilot adaptation, or none; not a semantic judgment."
+    },
+    "candidate_origin": {
+      "type": "string",
+      "description": "fresh_retrieval; no inherited pairs are appended."
+    },
+    "review_status": {
+      "type": "string",
+      "description": "Machine/unreviewed state or explicit completed human decision state; never inferred from score."
+    }
+  },
+  "review/decisions.csv": {
+    "decision_id": {
+      "type": "string",
+      "description": "Unique immutable decision identifier assigned by review coordinator."
+    },
+    "masco_version": {
+      "type": "string",
+      "description": "Fixed source edition string 2020."
+    },
+    "masco_code": {
+      "type": "string",
+      "description": "MASCO printed identifier; string including hyphen and leading zeros."
+    },
+    "esco_version": {
+      "type": "string",
+      "description": "Fixed target release string 1.2.1."
+    },
+    "esco_uri": {
+      "type": "string",
+      "description": "ESCO target URI; may be reviewer-added outside the shortlist."
+    },
+    "relation": {
+      "type": "string",
+      "description": "One of six explicit source-to-target relations in crosswalk_contract.json."
+    },
+    "review_stage": {
+      "type": "string",
+      "description": "independent, adjudication or ai_proposal."
+    },
+    "decision_method": {
+      "type": "string",
+      "description": "Explicit evidence-review method; human_evidence_review or documented AI method, never inferred from model score."
+    },
+    "guide_version": {
+      "type": "string",
+      "description": "Version of annotation protocol used for this decision."
+    },
+    "reviewer_id": {
+      "type": "string",
+      "description": "Actual reviewer identifier/pseudonym; blank until human assignment."
+    },
+    "reviewer_type": {
+      "type": "string",
+      "description": "human or ai; AI cannot be an independent human reviewer."
+    },
+    "reviewed_at": {
+      "type": "string",
+      "description": "Reviewer-supplied timestamp with timezone."
+    },
+    "independence_attested": {
+      "type": "string",
+      "description": "Explicit true/false attestation of independent initial judgment."
+    },
+    "source_evidence": {
+      "type": "string",
+      "description": "Source version, PDF page/coordinate and supporting scope evidence; distinguish unit context."
+    },
+    "target_evidence": {
+      "type": "string",
+      "description": "Frozen ESCO URI/version/record and supporting description/label evidence."
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Evidence-based explanation; no score-only rationale."
+    },
+    "search_beyond_shortlist": {
+      "type": "string",
+      "description": "Reviewer records whether broader target search was undertaken."
+    },
+    "search_terms_and_scope": {
+      "type": "string",
+      "description": "Search terms, inspected target areas, alternatives and stopping rationale."
+    },
+    "minutes_spent": {
+      "type": "number",
+      "description": "Observed human review effort in minutes, blank until measured."
+    },
+    "reference_completeness": {
+      "type": "string",
+      "description": "partial_pool by default; exhaustive only after justified systematic search."
+    },
+    "review_status": {
+      "type": "string",
+      "description": "Machine/unreviewed state or explicit completed human decision state; never inferred from score."
+    }
+  },
+  "review/accepted_mappings.csv": {
+    "mapping_id": {
+      "type": "string",
+      "description": "Unique accepted-release pair identifier."
+    },
+    "masco_version": {
+      "type": "string",
+      "description": "Fixed source edition string 2020."
+    },
+    "masco_code": {
+      "type": "string",
+      "description": "MASCO printed identifier; string including hyphen and leading zeros."
+    },
+    "esco_version": {
+      "type": "string",
+      "description": "Fixed target release string 1.2.1."
+    },
+    "esco_uri": {
+      "type": "string",
+      "description": "ESCO target URI; may be reviewer-added outside the shortlist."
+    },
+    "relation": {
+      "type": "string",
+      "description": "One of six explicit source-to-target relations in crosswalk_contract.json."
+    },
+    "adjudication_decision_id": {
+      "type": "string",
+      "description": "Foreign key to explicit completed human adjudication."
+    },
+    "supporting_decision_ids": {
+      "type": "string",
+      "description": "JSON array of independent human decision IDs."
+    },
+    "source_evidence": {
+      "type": "string",
+      "description": "Source version, PDF page/coordinate and supporting scope evidence; distinguish unit context."
+    },
+    "target_evidence": {
+      "type": "string",
+      "description": "Frozen ESCO URI/version/record and supporting description/label evidence."
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Evidence-based explanation; no score-only rationale."
+    },
+    "accepted_by": {
+      "type": "string",
+      "description": "Actual adjudicator identity; never the AI."
+    },
+    "accepted_at": {
+      "type": "string",
+      "description": "Adjudication timestamp."
+    },
+    "status": {
+      "type": "string",
+      "description": "For mappings: human_adjudicated. For occupation status: unresolved/matched/insufficient_evidence/no_suitable_match_found/reviewed_no_suitable_match."
+    }
+  },
+  "review/occupation_status.csv": {
+    "masco_version": {
+      "type": "string",
+      "description": "Fixed source edition string 2020."
+    },
+    "masco_code": {
+      "type": "string",
+      "description": "MASCO printed identifier; string including hyphen and leading zeros."
+    },
+    "status": {
+      "type": "string",
+      "description": "For mappings: human_adjudicated. For occupation status: unresolved/matched/insufficient_evidence/no_suitable_match_found/reviewed_no_suitable_match."
+    },
+    "search_status": {
+      "type": "string",
+      "description": "Separate search-progress state; no match found is not a reviewed absence conclusion."
+    },
+    "reviewer_id": {
+      "type": "string",
+      "description": "Actual reviewer identifier/pseudonym; blank until human assignment."
+    },
+    "reviewer_type": {
+      "type": "string",
+      "description": "human or ai; AI cannot be an independent human reviewer."
+    },
+    "reviewed_at": {
+      "type": "string",
+      "description": "Reviewer-supplied timestamp with timezone."
+    },
+    "evidence": {
+      "type": "string",
+      "description": "Supporting provenance for status or change event; not generated confidence."
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Evidence-based explanation; no score-only rationale."
+    }
+  },
+  "review/sample.csv": {
+    "masco_code": {
+      "type": "string",
+      "description": "MASCO printed identifier; string including hyphen and leading zeros."
+    },
+    "major_group": {
+      "type": "string",
+      "description": "First MASCO digit, including 0 for Armed Forces."
+    },
+    "unit_code": {
+      "type": "string",
+      "description": "Four-digit MASCO parent grouping, as text."
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable source label; does not replace code identity."
+    },
+    "cohort": {
+      "type": "string",
+      "description": "calibration, probability_test or challenge_test; challenge results are not population estimates."
+    },
+    "partition": {
+      "type": "string",
+      "description": "development or held_out; entire units and identical-normalized-title components stay together."
+    },
+    "eligible_major_population": {
+      "type": "integer",
+      "description": "Eligible occupation count within that major group and fixed partition."
+    },
+    "inclusion_probability_conditional_on_partition": {
+      "type": "number",
+      "description": "Probability sample inclusion rate; blank for purposive/calibration samples. Not a full-population first-stage weight."
+    },
+    "challenge_flags": {
+      "type": "string",
+      "description": "Heuristic selection reasons, not validated characteristics."
+    },
+    "source_pdf_page": {
+      "type": "integer",
+      "description": "Physical identity-row source page."
+    },
+    "title_pdf_page": {
+      "type": "integer",
+      "description": "1-based physical page supporting selected title, including alphabetical fallback."
+    },
+    "unit_context_pdf_page": {
+      "type": "integer",
+      "description": "First physical page of parent group narrative."
+    }
+  },
+  "review/reference_pairs.csv": {
+    "masco_code": {
+      "type": "string",
+      "description": "MASCO printed identifier; string including hyphen and leading zeros."
+    },
+    "esco_uri": {
+      "type": "string",
+      "description": "ESCO target URI; may be reviewer-added outside the shortlist."
+    },
+    "relation": {
+      "type": "string",
+      "description": "One of six explicit source-to-target relations in crosswalk_contract.json."
+    },
+    "acceptable": {
+      "type": "string",
+      "description": "Human-adjudicated true/false pair inclusion in a reference set."
+    },
+    "reference_completeness": {
+      "type": "string",
+      "description": "partial_pool by default; exhaustive only after justified systematic search."
+    },
+    "independent_human_reference": {
+      "type": "string",
+      "description": "Explicit provenance declaration; inherited/AI labels cannot be set true."
+    },
+    "adjudication_id": {
+      "type": "string",
+      "description": "Reference decision provenance; required by evaluator."
+    }
+  }
+}

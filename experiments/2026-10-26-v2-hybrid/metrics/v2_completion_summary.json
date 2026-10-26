@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "retrieval_source_count": 6620,
+  "target_count": 3039,
+  "encoder_count": 4,
+  "new_retrieval_rows": 10592000,
+  "reranked_sources": 330,
+  "reranked_rows": 132000,
+  "unique_reranked_pairs": 44475,
+  "methods": 20,
+  "original_pool_pairs": 9063,
+  "expanded_pool_pairs": 13782,
+  "added_pool_pairs": 4719,
+  "human_decisions": 0,
+  "accepted_mappings": 0,
+  "measured_accuracy": null,
+  "measured_improvement": null,
+  "review_version": "v2_20261026"
+}

@@ -1,0 +1,5 @@
+encoder,sources,targets,elapsed_seconds,scope
+MiniLM,6620,3039,25.85,Full retrieval including model loading and output work; one observed local run
+Qwen3,6620,3039,220.5,Full retrieval including model loading and output work; one observed local run
+EmbeddingGemma 2,6620,3039,135.26,Full retrieval including model loading and output work; one observed local run
+Jina v5,6620,3039,299.36,Full retrieval including model loading and output work; one observed local run

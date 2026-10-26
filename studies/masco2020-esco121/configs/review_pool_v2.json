@@ -1,0 +1,124 @@
+{
+  "review_version": "v2_20261026",
+  "seed": 20261026,
+  "pool_depth": 10,
+  "runs": [
+    "full_20261026_k10",
+    "v2_minilm_full",
+    "v2_qwen_full",
+    "v2_gemma2_full",
+    "v2_jina5_full",
+    "v2_rerank_review"
+  ],
+  "expected_methods": [
+    [
+      "lexical_tfidf",
+      "title"
+    ],
+    [
+      "lexical_tfidf",
+      "title_context"
+    ],
+    [
+      "minilm",
+      "title"
+    ],
+    [
+      "minilm",
+      "title_context"
+    ],
+    [
+      "weighted_minilm_adaptation",
+      "title"
+    ],
+    [
+      "weighted_minilm_adaptation",
+      "title_context"
+    ],
+    [
+      "bm25",
+      "title_context"
+    ],
+    [
+      "tfidf",
+      "title_context"
+    ],
+    [
+      "dense_minilm",
+      "title_context"
+    ],
+    [
+      "dense_qwen_embedding",
+      "title_context"
+    ],
+    [
+      "dense_gemma2",
+      "title_context"
+    ],
+    [
+      "dense_jina5_retrieval",
+      "title_context"
+    ],
+    [
+      "hybrid_minilm",
+      "title_context"
+    ],
+    [
+      "hybrid_qwen_embedding",
+      "title_context"
+    ],
+    [
+      "hybrid_gemma2",
+      "title_context"
+    ],
+    [
+      "hybrid_jina5_retrieval",
+      "title_context"
+    ],
+    [
+      "hybrid_minilm_qwen3_reranked",
+      "title_context"
+    ],
+    [
+      "hybrid_qwen_embedding_qwen3_reranked",
+      "title_context"
+    ],
+    [
+      "hybrid_gemma2_qwen3_reranked",
+      "title_context"
+    ],
+    [
+      "hybrid_jina5_retrieval_qwen3_reranked",
+      "title_context"
+    ]
+  ],
+  "input_variant": "raw title plus explicitly qualified unit-group description; ESCO preferred title, unique aliases and description",
+  "encoder_precision": "bfloat16; embeddings renormalized in float32",
+  "retrieval_scope": "all 6620 sources and all 3039 unique targets",
+  "reranking_scope": "all 330 prespecified review occupations; identical top-100 depth for every encoder",
+  "primary_experimental_method": "hybrid_qwen_embedding_qwen3_reranked",
+  "comparator_selection": "fixed before independent labels; no winner selected from unlabelled agreement",
+  "lexical": {
+    "bm25_k1": 1.5,
+    "bm25_b": 0.75,
+    "tfidf_char_ngrams": [
+      3,
+      5
+    ],
+    "fit": "ESCO only"
+  },
+  "fusion": {
+    "method": "reciprocal_rank_fusion",
+    "constant": 60,
+    "channel_depth": 100,
+    "output_depth": 100
+  },
+  "decisions": "blank human worksheets; no acceptance from ranking scores",
+  "pooling_limit": "Top-10 pool supports comparison at pooled depths but is not an exhaustive reference; reviewers must search beyond pool.",
+  "deferred_ablations": [
+    "title-only controlled alternatives",
+    "Jina text-matching adapter",
+    "supervised adaptation",
+    "AI scope assessor"
+  ]
+}

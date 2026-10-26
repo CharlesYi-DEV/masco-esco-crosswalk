@@ -1,0 +1,62 @@
+{
+  "run_id": "v2_qwen_full",
+  "status": "completed",
+  "scope": "full",
+  "encoder": "qwen_embedding",
+  "model": {
+    "model_id": "Qwen/Qwen3-Embedding-0.6B",
+    "revision": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+    "path": "sources/raw/models_v2/qwen_embedding/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+    "status": "downloaded",
+    "files": {
+      "1_Pooling/config.json": "37bf193fa101f19101bfad9c31d3eb0f786e247b7b1e5cb7f007d730eed1ddbd",
+      "README.md": "c34d9b7e5a267ad3fdd13227a253686bc90844ff4744a2a6a86c7c905e3d06f3",
+      "config.json": "b5bf1f51fc45be473a54718cef92448d90a1be001bf9b9a44b8c7f10a19feaa9",
+      "config_sentence_transformers.json": "10667c72ddb772627bf1780cb7f86af8e2ae0032b8c243c731172064105c6961",
+      "generation_config.json": "28396d421a2108acce96383f6a7de78008f7f1b17f807958f3c14c51dbfb65fb",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "model.safetensors": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd",
+      "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+      "tokenizer.json": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a",
+      "tokenizer_config.json": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "device": "mps",
+  "dtype": "bfloat16",
+  "query_count": 6620,
+  "target_count": 3039,
+  "k": 100,
+  "variants": [
+    "title_context"
+  ],
+  "candidate_rows": 2648000,
+  "seed": 20261026,
+  "inputs": {
+    "data/processed/masco_occupations.csv": "2cc7f6dc1468d74b80092105a499ee1728f7366501b28e53cbc71d768f223057",
+    "data/processed/masco_group_context.csv": "9b407610ae6b33907029ceaa58905a27e05ef4adcb22afc27adc78f9e870c372",
+    "data/processed/esco_occupations.csv": "6a3a216b5f28ed1f1118e65b3e6b5ba230fbba3c19cefa17c6ab648890524746"
+  },
+  "rrf_constant": 60,
+  "lexical_fit_corpus": "ESCO only",
+  "alias_policy": "one canonical document per URI; unique aliases included once; equal text across methods",
+  "query_policy": "raw titles; no grade or authority removal",
+  "numeric_hierarchy_filter": false,
+  "instruction": "Given a Malaysian occupation and explicitly qualified unit-group context, retrieve ESCO occupations relevant to its occupational activities and scope. Group context is not a statement of individual duties.",
+  "diagnostics": [
+    {
+      "variant": "title_context",
+      "max_seq_length": 32768,
+      "query_max_unprefixed_tokens": 126,
+      "target_max_unprefixed_tokens": 506,
+      "query_over_limit": 0,
+      "target_over_limit": 0
+    }
+  ],
+  "script_sha256": "ac6614dd22a314b689500e6e8e9d5a971da6907d9b734bd397f86aa5a06eaa3a",
+  "candidate_sha256": "40d96515e5d143ff48825be58ed00d0d9d6526b09205beb6412ee61a4fb54c00",
+  "environment_sha256": "a1f9798e5ab339a4bd9a3c19cf55b7aa3da3fbfb389d3bb899da8663ffeda774",
+  "elapsed_seconds": 220.5,
+  "human_validation": false,
+  "measured_accuracy": null
+}
